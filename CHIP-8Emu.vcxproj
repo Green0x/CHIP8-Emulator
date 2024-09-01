@@ -137,13 +137,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="renderer.cpp" />
-    <ClCompile Include="utils\romLoader.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\renderer.cpp" />
+    <ClCompile Include="src\utils\romLoader.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="renderer.h" />
-    <ClInclude Include="utils\romLoader.h" />
+    <ClInclude Include="src\renderer.h" />
+    <ClInclude Include="src\utils\romLoader.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
