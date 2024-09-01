@@ -21,7 +21,7 @@
     <ClCompile Include="src\renderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\utils\romLoader.cpp">
+    <ClCompile Include="src\chip8.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -29,7 +29,7 @@
     <ClInclude Include="src\renderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\utils\romLoader.h">
+    <ClInclude Include="src\chip8.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
