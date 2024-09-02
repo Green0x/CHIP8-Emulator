@@ -6,10 +6,16 @@
 
 int main(int argc, char *argv[])
 {
+
+    unsigned char bit[200];
+
+    bit[0] = 0b11111000;
+    
     // TODO: Feed argv to loadRom for release
     loadRom("IBM_Logo.ch8");
-    std::print("Rom Loaded into memory!");
+    std::println("Rom Loaded into memory!");
     chip8();
     
 	return 0;
+    
 }
