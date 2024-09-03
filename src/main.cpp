@@ -15,6 +15,7 @@ int main(int argc, char *argv[])
     loadRom("IBM_Logo.ch8");
     std::println("Rom Loaded into memory!");
     chip8();
+    render();
     
 	return 0;
     

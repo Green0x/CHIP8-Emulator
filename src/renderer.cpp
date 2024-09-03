@@ -19,17 +19,8 @@ int render() {
     // clear the current rendering target with the drawing color
     SDL_RenderClear(renderer);
 
-    SDL_SetRenderDrawColor(renderer, 0, 255, 255, 255);
-
-    SDL_Rect rect;
-    rect.x = 8;
-    rect.y = 8;
-    rect.w = 8;
-    rect.h = 8;
-    SDL_RenderFillRect(renderer, &rect);
-
-    // iterating thru the display (64*32)
-    /*for (int y = 0; y < 32; y++) {
+    // iterating through the display (64*32)
+    for (int y = 0; y < 32; y++) {
         for (int x = 0; x < 64; x++) {
             if (display[x + (y * 64)]) {
                 SDL_Rect rect;
@@ -42,7 +33,7 @@ int render() {
                 SDL_RenderFillRect(renderer, &rect);
             }
         }
-    }*/
+    }
 
 
 

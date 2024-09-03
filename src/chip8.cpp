@@ -3,6 +3,7 @@
 #include <iostream>
 #include <algorithm>
 #include <fstream>
+#include <bitset>
 
 // 4Kb of RAM
 unsigned char memory[4096];
@@ -57,6 +58,7 @@ unsigned char font[80] = {
 
 void initChip8() {
 	std::copy(&font[0], &font[80], &memory[0]); // Copy font into memory
+	std::cout << std::bitset<8>(memory[0]) << std::endl;
 	
 }
 
