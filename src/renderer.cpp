@@ -1,20 +1,13 @@
 #include <SDL.h>
+#include <print>
 
 
-int render() {
-    SDL_Window* screen;
-    unsigned char display[64 * 32];
-    SDL_Texture* tex;
+int render(SDL_Window* screen, SDL_Renderer* renderer) {
     
-    SDL_Renderer* renderer;
+    unsigned char display[64][32]{};
 
-    SDL_Init(SDL_INIT_VIDEO);
-
-    screen = SDL_CreateWindow("CHIP-8", SDL_WINDOWPOS_CENTERED,
-        SDL_WINDOWPOS_CENTERED, 64 * 8, 32 * 8, 0);
-    renderer = SDL_CreateRenderer(screen, -1, SDL_RENDERER_ACCELERATED);
-
-    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+    display[0][5] = { 1 };
+    
 
     // clear the current rendering target with the drawing color
     SDL_RenderClear(renderer);
@@ -22,7 +15,8 @@ int render() {
     // iterating through the display (64*32)
     for (int y = 0; y < 32; y++) {
         for (int x = 0; x < 64; x++) {
-            if (display[x + (y * 64)]) {
+            if (display[x][y] == 1) {
+                SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
                 SDL_Rect rect;
 
                 rect.x = x * 8;
@@ -32,6 +26,18 @@ int render() {
 
                 SDL_RenderFillRect(renderer, &rect);
             }
+            else {
+                SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+                SDL_Rect rect;
+
+                rect.x = x * 8;
+                rect.y = y * 8;
+                rect.w = 8;
+                rect.h = 8;
+
+                SDL_RenderFillRect(renderer, &rect);
+            }
+            
         }
     }
 
@@ -39,7 +45,5 @@ int render() {
 
     // update the screen
     SDL_RenderPresent(renderer);
-    SDL_Delay(5000);
-    //SDL_Quit();
     return 1;
 }

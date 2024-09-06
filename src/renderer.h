@@ -1,4 +1,4 @@
+#include <SDL.h>
 
 
-
-int render();
+int render(SDL_Window* screen, SDL_Renderer* renderer);
